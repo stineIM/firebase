@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/main.css">
+    <title>IM Chat</title>
+</head>
+
+<body>
+    <main>
+        <h1>Velkommen</h1>
+
+        <h3>Legg til element</h3>
+        <div>
+            <label>Tittel:</label><br>
+            <input id="title" type="text">
+        </div>
+        <div>
+            <label>År:</label><br>
+            <input id="year" type="text">
+        </div>
+        <div class="signUpBox">
+            <button id="btnCreate" onclick="addItem()">Legg til</button>
+        </div>
+    </main>
+
+    <!-- Må hente inn eksterne rammeverk/bibliotek for å kunne laste inn js frå anna fil-->
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.3/firebase-firestore-compat.js"></script>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
