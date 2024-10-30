@@ -1,67 +1,66 @@
 body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-    background-color: #f9f9f9;
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background-color: #f0f4f8; /* Lys bakgrunn */
 }
+
 main {
-    max-width: 1000px;
-    margin: auto;
+    max-width: 900px;
+    margin: 20px auto;
     padding: 20px;
     background: white;
     border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
 }
+
 h1, h3 {
     color: #333;
+    text-align: center; /* Sentraliserer overskriftene */
 }
+
 .form-group {
     margin-bottom: 15px;
 }
+
 .form-group label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
+    color: #555;
 }
+
 .form-group input {
     width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    transition: border 0.3s;
 }
+
+.form-group input:focus {
+    border-color: #4CAF50; /* Farge på border ved fokus */
+    outline: none; /* Fjerner standard outline */
+}
+
 .signUpBox {
     text-align: center;
     margin-top: 10px;
 }
+
 .signUpBox button {
-    padding: 10px 15px;
-    background-color: #4CAF50;
+    padding: 12px 20px;
+    background-color: #4CAF50; /* Grønn bakgrunn */
     color: white;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
+    transition: background-color 0.3s, transform 0.2s; /* Animasjoner */
 }
+
 .signUpBox button:hover {
-    background-color: #45a049;
-}
-.movie-card {
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 10px;
-    margin: 10px 0;
-    display: flex;
-    align-items: center;
-}
-.movie-card img {
-    width: 100px;
-    height: auto;
-    margin-right: 15px;
-}
-.movie-card h2 {
-    margin: 0;
-}
-.movie-card p {
-    margin: 5px 0;
+    background-color: #45a049; /* Mørkere grønn ved hover */
+    transform: scale(1.05); /* Liten zoom-effekt ved hover */
 }
 
 .movie-container {
@@ -74,13 +73,32 @@ h1, h3 {
 .movie-card {
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 10px;
+    padding: 15px;
     margin: 10px;
     flex: 1 1 calc(33.333% - 20px); /* Tre filmer per rad */
     box-sizing: border-box;
-    transition: transform 0.2s; /* For en liten animasjon ved hover */
+    background-color: #ffffff; /* Hvit bakgrunn for kortene */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Skyggeeffekt */
+    transition: transform 0.2s, box-shadow 0.2s; /* Animasjoner */
 }
 
 .movie-card:hover {
-    transform: scale(1.05); /* Liten zoom-effekt ved hover */
+    transform: translateY(-5px); /* Løfter kortet ved hover */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Endret skyggestyrke ved hover */
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px; /* Runde hjørner for bilder */
+}
+
+.movie-card h2 {
+    margin: 10px 0 5px; /* Avstand over og under */
+    color: #333; /* Mørk tekstfarge */
+}
+
+.movie-card p {
+    margin: 5px 0;
+    color: #777; /* Lysere tekstfarge for år */
 }
