@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/main.css">
-    <title>IM Chat</title>
+    <title>Database</title>
 </head>
 
 <body>
@@ -22,9 +22,15 @@
             <label>År:</label><br>
             <input id="year" type="text">
         </div>
+        <div>
+            <label>Bilde-URL:</label><br>
+            <input id="image" type="text" placeholder="URL til bilde">
+        </div>
         <div class="signUpBox">
             <button id="btnCreate" onclick="addItem()">Legg til</button>
         </div>
+
+        <div id="itemTable" class="movie-container"></div>
     </main>
 
     <!-- Må hente inn eksterne rammeverk/bibliotek for å kunne laste inn js frå anna fil-->
