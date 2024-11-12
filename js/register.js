@@ -1,11 +1,11 @@
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: "AIzaSyAZhpNKwOTXzd8x-_H_Pl4CWyirGyf-wOQ",
-    authDomain: "fir-oppsett.firebaseapp.com",
-    projectId: "fir-oppsett",
-    storageBucket: "fir-oppsett.appspot.com",
-    messagingSenderId: "133800106060",
-    appId: "1:133800106060:web:ff6f7ccb4ec0e54635fce9"
+    apiKey: 
+    authDomain: 
+    projectId: 
+    storageBucket: 
+    messagingSenderId:
+    appId: 
 });
 ///////////////////////////////////////////////////////////
 
