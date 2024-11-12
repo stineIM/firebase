@@ -1,11 +1,11 @@
 
 const firebaseApp = firebase.initializeApp({
-    apiKey:,
-    authDomain: ,
-    projectId: ,
-    storageBucket: ,
-    messagingSenderId: ,
-    appId: 
+    apiKey: "AIzaSyAZhpNKwOTXzd8x-_H_Pl4CWyirGyf-wOQ",
+    authDomain: "fir-oppsett.firebaseapp.com",
+    projectId: "fir-oppsett",
+    storageBucket: "fir-oppsett.appspot.com",
+    messagingSenderId: "133800106060",
+    appId: "1:133800106060:web:ff6f7ccb4ec0e54635fce9"
 });
 ///////////////////////////////////////////////////////////
 
@@ -29,11 +29,13 @@ function addItem() {
     const title = document.getElementById("title").value;
     const year = document.getElementById("year").value;
     const image = document.getElementById("image").value;
+    let userid = sessionStorage.getItem("uid");
 
     db.collection("movies").doc(title).set({
         title: title,
         year: year,
-        image: image
+        image: image,
+        userid:userid
     }).then(() => {
         getItems(); // Hent filmene på nytt etter at en ny film er lagt til
     });
@@ -46,11 +48,14 @@ function addItem() {
 // Henter ut data frå collection som heiter movies. Feltene image, title og year er i kvart dokument i databasen. 
 function getItems() {
     let items = "";
+    let userid = sessionStorage.getItem("uid"); // Henter ut userid som er lagra i sessionStorage
     db.collection("movies").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             docid = "'" + doc.id + "'";          
             const data = doc.data();
-            items += "<div class='movie-card'>" +
+            // Sjekker om userid i databasen er det same som userid som er logga inn
+            if (doc.data().userid == userid) {
+                items += "<div class='movie-card'>" +
                 "<div><img src='" + data.image + "' alt='" + data.title + "'></div>" +
                 "<div>" +
                 "<h2>" + data.title + "</h2>" +
@@ -62,6 +67,8 @@ function getItems() {
                 "</div>" +
                 "</div>" +
                 "</div>";
+            }
+            
 
 
         });

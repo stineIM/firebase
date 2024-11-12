@@ -5,48 +5,44 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/login.css">
     <title>Filmdatabase</title>
 </head>
 
 <body>
     <main>
-        <h1>Føyen sitt admin system</h1>
+        <h1>Filmdatabase</h1>
+        <div class="login-container">
+            <h3>Opprett ny bruker</h3>
+            <div>
+                <input id="fname" type="text" placeholder="Fornavn">
+            </div>
+            <div>
+                <input id="lname" type="text" placeholder="Etternavn">
+            </div>
+            <div>
+                <input id="address" type="text" placeholder="Adresse">
+            </div>
+            <div>
+                <input id="zip" type="number" maxlength="4" placeholder="Postnr">
+            </div>
+            <div>
+                <input id="city" type="text" placeholder="Poststed">
+            </div>
+            <div>
+                <input id="email" type="email" placeholder="Epost">
+            </div>
+            <div>
+                <input id="password" type="password" placeholder="Passord">
+            </div>
 
-        <h3>Opprett ny bruker</h3>
-        <div>
-            <label>Fornavn:</label><br>
-            <input id="fname" type="text">
+            <div class="signUpBox">
+                <button id="btnCreate" onclick="signUp()">Opprett bruker</button>
+            </div>
+            <div class="backBox">
+                <a href="login.html">Tilbake til innlogging</button>
+            </div>
         </div>
-        <div>
-            <label>Etternavn:</label><br>
-            <input id="lname" type="text">
-        </div>
-        <div>
-            <label>Adresse:</label><br>
-            <input id="address" type="text">
-        </div>
-        <div>
-            <label>Postnr:</label><br>
-            <input id="zip" type="number" maxlength="4">
-        </div>
-        <div>
-            <label>Poststed:</label><br>
-            <input id="city" type="text">
-        </div>
-        <div>
-            <label>Epost:</label><br>
-            <input id="email" type="email">
-        </div>
-        <div>
-            <label>Passord:</label><br>
-            <input id="password" type="password">
-        </div>
-
-        <div class="signUpBox">
-            <button id="btnCreate" onclick="signUp()">Opprett bruker</button>
-        </div>
-    
     </main>
 
     <!-- Må hente inn eksterne rammeverk/bibliotek for å kunne laste inn js frå anna fil-->
