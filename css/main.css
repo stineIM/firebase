@@ -76,36 +76,18 @@ h1, h3 {
 }
 
 .movie-card {
-    position: relative;
-    display: flex;
-    justify-content: space-between; /* Sørger for at informasjonen er til venstre og ikonene til høyre */
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 8px;
     margin: 10px;
-    flex-wrap: wrap; /* Tillater at elementene brytes på mobil */
-}
-
-/* Info (tittel, år) som vises til venstre */
-.movie-card div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
 }
 
 /* Bilde-styling */
 .movie-card img {
-    max-width: 150px;
+    width: 100%;
     height: auto;
-    margin-right: 15px; /* Litt avstand mellom bilde og tekst */
-}
-
-/* Ikonene */
-.movie-card .icons {
-    display: flex;
-    flex-direction: column; /* Sørger for at ikonene stables vertikalt */
-    justify-content: center;
-    align-items: center;
+    object-fit: contain;
+    height: 350px;
 }
 
 /* Styling for redigeringsikonet */

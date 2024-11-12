@@ -1,7 +1,11 @@
 
 const firebaseApp = firebase.initializeApp({
-
-    
+    apiKey:,
+    authDomain: ,
+    projectId: ,
+    storageBucket: ,
+    messagingSenderId: ,
+    appId: 
 });
 ///////////////////////////////////////////////////////////
 
@@ -47,7 +51,7 @@ function getItems() {
             docid = "'" + doc.id + "'";          
             const data = doc.data();
             items += "<div class='movie-card'>" +
-                "<img src='" + data.image + "' alt='" + data.title + "'>" +
+                "<div><img src='" + data.image + "' alt='" + data.title + "'></div>" +
                 "<div>" +
                 "<h2>" + data.title + "</h2>" +
                 "<p>År: " + data.year + "</p>" +
@@ -68,9 +72,9 @@ getItems();
 
 function updateMovie(docid) {
     var movie = db.collection("movies").doc(docid);
-    const title = document.getElementById("title").value;
-    const year = document.getElementById("year").value;
-    const image = document.getElementById("image").value;
+    const title = document.getElementById("inptitle").value;
+    const year = document.getElementById("inpyear").value;
+    const image = document.getElementById("inpimage").value;
 
     // Oppdater bruker i firestore
     return movie.update({

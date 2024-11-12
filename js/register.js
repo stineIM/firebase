@@ -1,7 +1,11 @@
-// HER LEGGER DU INN INFOEN DIN FRÅ FIREBASE
 
 const firebaseApp = firebase.initializeApp({
-
+    apiKey:,
+    authDomain: ,
+    projectId: ,
+    storageBucket: ,
+    messagingSenderId: ,
+    appId: 
 });
 ///////////////////////////////////////////////////////////
 
@@ -53,7 +57,7 @@ function signUp() {
                 userId: userCredentials.user.uid
             })
                 .then(function () {
-                    window.location.href = "./users.html";
+                    window.location.href = "./index.html";
                 })
         })
 
