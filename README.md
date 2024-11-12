@@ -1,4 +1,4 @@
-<h1>How To: </h1>
+<h1>How To - Authentication Google Firebase </h1>
 <ol>
   <li>Logg inn på firebase.google.com, velg applikasjonen din og klikk "Authentication" </li>
   <li>Klikk "Get Started"</li>
