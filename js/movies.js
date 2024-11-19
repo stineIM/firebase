@@ -1,11 +1,6 @@
 
 const firebaseApp = firebase.initializeApp({
-    apiKey: 
-    authDomain: 
-    projectId: 
-    storageBucket: 
-    messagingSenderId: 
-    appId: 
+
 });
 ///////////////////////////////////////////////////////////
 
@@ -30,11 +25,19 @@ function addItem() {
     const year = document.getElementById("year").value;
     const image = document.getElementById("image").value;
     let userid = sessionStorage.getItem("uid");
+    let category = document.getElementsByName("category"); 
+    let categories = [];
+    for (let i=0; i < category.length; i++) {
+        if(category[i].checked) {
+            categories.push(category[i].value);
+        }
+    }
 
     db.collection("movies").doc(title).set({
         title: title,
         year: year,
         image: image,
+        category: categories, 
         userid:userid
     }).then(() => {
         getItems(); // Hent filmene på nytt etter at en ny film er lagt til
@@ -69,7 +72,10 @@ function getItems() {
                 "</div>";
             }
             
-
+        
+            for (let i=0; i< doc.data().category.length; i++) {
+               
+            }
 
         });
         document.getElementById("itemTable").innerHTML = items;
@@ -83,7 +89,7 @@ function updateMovie(docid) {
     const year = document.getElementById("inpyear").value;
     const image = document.getElementById("inpimage").value;
 
-    // Oppdater bruker i firestore
+    // Oppdater filmen i firestore
     return movie.update({
         title: title,
         year: year,
@@ -91,7 +97,7 @@ function updateMovie(docid) {
     })
         .then(() => {
             console.log("Document successfully updated!");
-            // Redirecter til users.html 
+            // Redirecter til index.html 
             window.location.href = "./index.html";
         })
         .catch((error) => {
@@ -102,17 +108,26 @@ function updateMovie(docid) {
 
 // Denne viser brukeren sin informasjon som ligger i databasen.
 function showUpdateForm(docid) {
-    console.log(docid);
     document.getElementById("userform").style.display = "block";
+    let category = document.getElementsByName("category"); 
     document.getElementById("btnUpdate").onclick = function () { updateMovie(docid) };
     db.collection("movies").get().then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
             // Sjekker om doc-iden er den samme for den brukaren me skal redigere 
             if (docid == doc.id) {
-                console.log("hei");
                 document.getElementById("inptitle").value = doc.data().title;
                 document.getElementById("inpyear").value = doc.data().year;
                 document.getElementById("inpimage").value = doc.data().image;
+
+                // Går igjennom hver kategori og sjekker om den finnes i databasen
+                for (let i=0; i < category.length ; i++) {
+                    for (let j=0; j<doc.data().category.length;j++) {
+                        if (category[i].value == doc.data().category[j]) {
+                            console.log(category[i].value); 
+                            category[i].checked = true; 
+                        }
+                    }
+                }
             }
         });
     })

@@ -31,6 +31,14 @@
                 <label for="image">Bilde-URL:</label>
                 <input id="image" type="text" placeholder="URL til bilde">
             </div>
+            <div class="form-group">
+                <label>Sjanger</label>
+                <input type="checkbox" name="category" value="action" id="genAction"> Action 
+                <input type="checkbox" name="category" value="comedy" id="genComedy"> Komedie 
+                <input type="checkbox" name="category" value="thriller" id="genThriller"> Thriller 
+                <input type="checkbox" name="category" value="drama" id="genDrama"> Drama 
+               
+            </div>
             <div class="signUpBox">
                 <button id="btnCreate" onclick="addItem()">Legg til</button>
             </div>
@@ -52,6 +60,14 @@
                 <div>
                     <label>Bilde-URL:</label><br>
                     <input id="inpimage" type="text">
+                </div>
+                <div>
+                    <label>Sjanger</label>
+                    <input type="checkbox" name="category" value="action" id="inpgenAction"> Action 
+                    <input type="checkbox" name="category" value="comedy" id="inpgenComedy"> Komedie 
+                    <input type="checkbox" name="category" value="thriller" id="inpgenThriller"> Thriller 
+                    <input type="checkbox" name="category" value="drama" id="inpgenDrama"> Drama 
+                   
                 </div>
                 <button id="btnUpdate">Lagre endringer</button>
             </div>
